@@ -15,6 +15,17 @@ http.createServer(function (require, reponse) {
             }
         })
     }
+    else if (url=='login.html'){
+        fs.readFile('login.html', function (errol, data) {
+            if (!errol) {
+                reponse.write(data);
+                reponse.end();
+                console.log("ddax chay vao");
+            } else {
+                reponse.end("404 not found");
+            }
+        })
+    }
 
 
 }).listen(process.env.PORT||'8080');
